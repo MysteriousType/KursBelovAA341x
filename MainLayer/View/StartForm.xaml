@@ -1,0 +1,91 @@
+﻿<Window x:Class="WPFApplication01.StartForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Окно авторизации" Width="600" Height="300" ResizeMode="NoResize"
+        Icon="/img/icon1.ico">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- fill the left column -->
+        <Rectangle Grid.Row="0" Fill="#FF49B3EA" />
+
+        <!-- bg -->
+        <Image Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <Image.Source>
+                <FormatConvertedBitmap Source="/img/bg1.png"/>
+            </Image.Source>
+        </Image>
+
+        <!-- logo -->
+<!--
+        <Image Grid.Row="0" Margin="15" Width="125" Height="50" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Image.Source>
+                <FormatConvertedBitmap Source="/img/logo1.png"/>
+            </Image.Source>
+        </Image>
+-->
+        <Label Grid.Column="1" Content="Логин" Margin="22.2,30,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Content="Пароль" Margin="22.2,101,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <!-- Login textblock -->
+        <TextBlock 
+            Grid.Column="1" 
+            x:Name="TextBlockLogin" 
+            Text="{Binding Path=TextBlockLoginText, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" 
+            Foreground="Red" 
+            HorizontalAlignment="Left" 
+            Margin="70.2,35,0,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Width="198" 
+            TextAlignment="Right"/>
+        <!-- Password textblock -->
+        <TextBlock
+            Grid.Column="1"
+            x:Name="TextBlockPassword"
+            Text="{Binding Path=TextBlockPasswordText, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
+            Foreground="Red"
+            HorizontalAlignment="Left"
+            Margin="78.2,106,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top" 
+            Width="190" 
+            TextAlignment="Right"/>
+
+        <!-- Login textbox -->
+        <TextBox
+            Grid.Column="1"
+            BorderBrush="{Binding Path=TextBoxLoginBorderColor, UpdateSourceTrigger=PropertyChanged}"
+            SelectionBrush="#FF49B3EA"
+            Margin="26.2,56,0,0" 
+            Text="{Binding Path=LoginText, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}"
+            TextWrapping="Wrap"
+            FontSize="18"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="242"
+            Height="29"/>
+        <!-- Password textbox -->
+        <TextBox
+            Grid.Column="1"
+            BorderBrush="{Binding Path=TextBoxPasswordBorderColor}"
+            SelectionBrush="#FF49B3EA"
+            Margin="26.2,127,0,0"
+            Text="{Binding Path=PasswordText, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}" 
+            TextWrapping="Wrap" 
+            FontSize="18"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="242"
+            Height="29"/>
+
+        <Button Grid.Column="1" Command="{Binding UseButton, Mode=OneTime}" Content="Войти" Margin="26.2,191,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
