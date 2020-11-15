@@ -23,6 +23,7 @@
 
         <Button
             Grid.Row="0"
+            Command="{Binding CloseApp, Mode=OneTime}"
             Content="Выйти"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"

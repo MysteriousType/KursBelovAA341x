@@ -1,5 +1,7 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Command;
+using System;
 using System.ComponentModel;
+using System.Windows;
 using WPFApplication01;
 
 namespace MainLayer.ViewModel
@@ -15,6 +17,20 @@ namespace MainLayer.ViewModel
             if (codeBehind == null) throw new ArgumentNullException(nameof(codeBehind));
 
             _sellerWindowCodeBehind = codeBehind;
+        }
+
+        private RelayCommand _closeApp = null;
+        public RelayCommand CloseApp
+        {
+            get
+            {
+                return _closeApp = _closeApp ?? new RelayCommand(CloseAppFunc, true);
+            }
+        }
+
+        private void CloseAppFunc()
+        {
+            Application.Current.MainWindow.Close();
         }
     }
 }

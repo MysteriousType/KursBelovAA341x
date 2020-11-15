@@ -15,8 +15,6 @@ namespace MainLayer.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private int deleteme;
-
         private string _titleText = "СУ Автовокзала. Продавец Флорова А.А.";
         public string TitleText
         {
@@ -58,7 +56,6 @@ namespace MainLayer.ViewModel
         private void OnLoadFirstPage()
         {
             RacesButtonsEnabled = true;
-
             CodeBehind.LoadView(ViewType.First);
         }
 
@@ -88,7 +85,6 @@ namespace MainLayer.ViewModel
         private void OnLoadLogoutPage1()
         {
             RacesButtonsEnabled = false;
-
             CodeBehind.LoadView(ViewType.Logout1);
         }
 

@@ -31,8 +31,7 @@
                         </Button.Width>
                     </Button>
                     <Button 
-                        Content="Фильтрация" 
-                        Command="{Binding LoadSecondPage, Mode=OneTime}"
+                        Content="Фильтрация"
                         IsEnabled="{Binding RacesButtonsEnabled, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
                         Margin="10" 
                         HorizontalAlignment="Center">
@@ -41,8 +40,7 @@
                         </Button.Width>
                     </Button>
                     <Button 
-                        Content="Окно печати" 
-                        Command="{Binding LoadFirstPage, Mode=OneTime}"
+                        Content="Окно печати"
                         IsEnabled="{Binding RacesButtonsEnabled, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                         Name="WSrc" 
                         Margin="10" 
